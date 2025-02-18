@@ -1,0 +1,32 @@
+#bin/bash
+function display_usage(){
+    echo "Enter a number between 1-10"
+}
+read -p "Enter a number " num
+#if [[ $num = " " ]] || [$num = "10" ]; then
+ #  display_usage
+ #exit 0
+#fi
+
+
+
+alpha="a-z"
+rnum=$((1 + $RANDOM % 10 ))
+echo "Random number generated : " $rnum
+
+while [ "$num" != "$rnum" ]; do
+
+
+
+if [ $num = $rnum ]; then
+echo -n "you won"
+exit 0
+elif [ $num != $rnum ]; then
+echo -n "you lose"
+    exit 1
+else
+echo -n "Enter a number between 1-10"
+
+
+fi
+done
