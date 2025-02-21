@@ -2,31 +2,18 @@
 function display_usage(){
     echo "Enter a number between 1-10"
 }
-read -p "Enter a number " num
-#if [[ $num = " " ]] || [$num = "10" ]; then
- #  display_usage
- #exit 0
-#fi
+read -p "Enter a number: " num
 
-
-
-alpha="a-z"
-rnum=$((1 + $RANDOM % 10 ))
+rnum=$(( $RANDOM % 10 + 1 ))
 echo "Random number generated : " $rnum
 
-while [ "$num" != "$rnum" ]; do
-
-
-
-if [ $num = $rnum ]; then
+if  [[ "$num" =~ "$rnum" ]]; then
 echo -n "you won"
-exit 0
-elif [ $num != $rnum ]; then
-echo -n "you lose"
-    exit 1
+exit 1
+elif [[ "$num" =~ ^[A-Za-z]+$ ]]; then
+   display_usage
+   exit 0
 else
-echo -n "Enter a number between 1-10"
-
+  echo -n "you lose"
 
 fi
-done
