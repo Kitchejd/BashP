@@ -15,5 +15,6 @@ elif [[ "$num" =~ ^[A-Za-z]+$ ]]; then
    exit 0
 else
   echo -n "you lose"
-
+  exit 1
 fi
+
